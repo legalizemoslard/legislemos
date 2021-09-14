@@ -30,6 +30,20 @@ services:
     tty: true
     stdin_open: true
 
+  front:
+    container_name: cl-docker-front
+    depends_on:
+      - "web"
+    build:
+      context: .
+      dockerfile: front/Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      NODE_ENV: production
+    env_file:
+      - ".env-front"
+
   que:
     container_name: cl-que
     depends_on:
