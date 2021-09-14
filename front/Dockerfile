@@ -7,7 +7,7 @@ COPY citizenlab.config.json citizenlab.config.*.json /
 ADD front/package.json front/package-lock.json ./
 ADD front/internals internals
 
-# RUN npm install
+RUN npm install
 
 ADD front/. .
 
