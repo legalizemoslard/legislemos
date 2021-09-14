@@ -27,6 +27,8 @@ const Root = () => {
     modules.afterMountApplication();
   }, []);
 
+  console.log('env variables: ', process.env);
+
   return (
     <OutletsProvider>
       <LanguageProvider>
