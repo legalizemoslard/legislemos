@@ -39,12 +39,11 @@ export default class GetAppConfigurationLocales extends React.Component<
 
   componentDidMount() {
     const currentAppConfiguration$ = currentAppConfigurationStream().observable;
-    
+
     this.subscriptions = [
-      currentAppConfiguration$.subscribe((currentAppConfiguration: any) => {
-        console.log('currentAppConfiguration: ', isNilOrError(currentAppConfiguration));
+      currentAppConfiguration$.subscribe((currentAppConfiguration) => {
         this.setState({
-          appConfigurationLocales: (!isNilOrError(currentAppConfiguration) && currentAppConfiguration !== {})
+          appConfigurationLocales: !isNilOrError(currentAppConfiguration)
             ? currentAppConfiguration.data.attributes.settings.core.locales
             : currentAppConfiguration,
         });
