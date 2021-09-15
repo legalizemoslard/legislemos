@@ -1,0 +1,21 @@
+version: "3.8"
+
+services:
+  front:
+    container_name: cl-front-web
+    #depends_on:
+    #  back:
+    #    condition: service_healthy
+    build:
+      context: .
+      dockerfile: front/Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      NODE_ENV: production
+    env_file:
+      - ".env-front"
+
+networks:
+  default:
+    name: citizenlab

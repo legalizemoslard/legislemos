@@ -160,6 +160,10 @@ const Avatar = memo(
         return null;
       }
 
+      console.log('user: ', user);
+      console.log('avatarSrc: ', avatarSrc);
+      
+
       const AvatarComponent = (
         <Container aria-hidden className={className} size={containerSize}>
           {avatarSrc && (

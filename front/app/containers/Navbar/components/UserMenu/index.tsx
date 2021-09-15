@@ -117,7 +117,7 @@ class UserMenu extends PureComponent<Props, State> {
             onClick={this.toggleDropdown}
             aria-expanded={opened}
           >
-            <User userId={userId} isVerified={isVerified} />
+            <User userId={userId} isVerified={isVerified} /> 
           </DropdownButton>
 
           <Dropdown

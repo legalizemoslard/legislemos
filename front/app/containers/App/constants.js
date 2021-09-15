@@ -5,14 +5,13 @@ exports.AUTH_PATH = '/auth';
 exports.API_PATH = '/web_api/v1';
 exports.GOOGLE_MAPS_API_KEY = process.env.GOOGLE_MAPS_API_KEY || '';
 exports.API_HOST =
-  process.env.API_HOST ||
-  (typeof window === 'undefined' ? 'localhost' : window.location.hostname);
+  process.env.API_HOST ? process.env.API_HOST : (typeof window === 'undefined' ? 'localhost' : window.location.hostname);
 exports.API_PORT = process.env.API_PORT || 4000;
 exports.GRAPHQL_HOST =
   process.env.GRAPHQL_HOST ||
   (typeof window === 'undefined' ? 'localhost' : window.location.hostname);
 exports.GRAPHQL_PORT = process.env.GRAPHQL_PORT || 5001;
-exports.DEFAULT_LOCALE = 'en';
+exports.DEFAULT_LOCALE = 'es-ES';
 // the locales we "support" :
 // platformBaseUrl/{oneOfTheseStrings}/{anything we have a route for}
 // - won't 404
