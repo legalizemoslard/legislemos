@@ -5,9 +5,10 @@ const { API_HOST, API_PORT } = require('./getApiData');
 const app = express();
 
 app.use('/uploads', (req, res) => {
-  req
+  console.log('getting image from: ', `http://${API_HOST}:${API_PORT}/uploads/${req.url}`);
+  return req
     .pipe(request(`http://${API_HOST}:${API_PORT}/uploads/${req.url}`))
-    .pipe(res);
+    .pipe(res); 
 });
 
 app.listen(4000, () => {

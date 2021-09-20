@@ -16,10 +16,10 @@ app.use(compression());
 
 // Redirects API requests
 app.use('/web_api', (req, res) => {
-  console.log('get api resource from: ', `http://${API_HOST}:${API_PORT}/web_api${req.url}`);
+  console.log('get api resource from: ', `http://${API_HOST}:${API_PORT}/web_api/${req.url}`);
   return (
     req
-      .pipe(request(`http://${API_HOST}:${API_PORT}/web_api${req.url}`))
+      .pipe(request(`http://${API_HOST}:${API_PORT}/web_api/${req.url}`))
       .pipe(res)
   )
 });
@@ -36,10 +36,10 @@ app.use('/auth', (req, res) => {
   req.pipe(request(`http://${API_HOST}:${API_PORT}/auth/${req.url}`)).pipe(res);
 });
 app.use('/uploads', function (req, res) {
-  console.log('get uploads resource from: ', `http://${API_HOST}:${API_PORT}/uploads${req.url}`);
+  console.log('get uploads resource from: ', `http://${API_HOST}:${API_PORT}/web_api/${req.url}`);
   return (
     req
-      .pipe(request(`http://${API_HOST}:${API_PORT}/uploads${req.url}`))
+      .pipe(request(`http://${API_HOST}:${API_PORT}/uploads/${req.url}`))
       .pipe(res)
   )
 });
