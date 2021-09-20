@@ -136,14 +136,14 @@ class AppConfiguration < ApplicationRecord
   end
 
   def base_frontend_uri
-    return 'http://localhost:3000' if Rails.env.development?
+    return 'http://redcannabica.info:3000' if Rails.env.development?
 
     transport = Rails.env.test? ? 'http' : 'https'
     "#{transport}://#{host}"
   end
 
   def base_backend_uri
-    return 'http://localhost:4000' if Rails.env.development?
+    return 'http://redcannabica.info:4000' if Rails.env.development?
 
     transport = Rails.env.test? ? 'http' : 'https'
     "#{transport}://#{host}"
